@@ -1,9 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from "react";
+import { View, Text, StyleSheet, TextInput, StatusBar } from "react-native";
 
 export default function App() {
+  const [texto, setTexto] = useState("");
   return (
-    <View style={styles.container}>
-      <Text>Roni</Text>
+    <View>
+      <StatusBar barStyle={"light-content"} />
+      <TextInput
+        style={styles.input}
+        keyboardType="default"
+        placeholder="Digite algo" 
+        onChangeText={(text) => setTexto(text)} 
+      ></TextInput>
+      <Text>{texto}</Text>
     </View>
   );
 }
@@ -11,8 +20,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'blue',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  input: {
+    height: 40,
+    borderWidth: 2,
+    fontSize: 16,
+    padding: 10,
+    margin: 30,
+  },
+  texto: {
+    fontSize: 25,
+    textAlign: "center",
   },
 });
