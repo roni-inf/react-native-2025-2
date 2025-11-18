@@ -1,0 +1,6 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptfdions": {
+    "strict": true
+  }
+}
