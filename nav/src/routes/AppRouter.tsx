@@ -2,12 +2,14 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import Home from "../screens/Home";
 import Sobre from "../screens/Sobre";
 import Contato from "../screens/Contato";
+import CustomDrawer from "../components/CustomDrawer";
 
 const Drawer = createDrawerNavigator();
 
 export default function AppRouter() {
   return (
     <Drawer.Navigator
+      drawerContent={CustomDrawer}
       screenOptions={{
         drawerActiveBackgroundColor: "aqua",
         drawerInactiveBackgroundColor: "gray",
