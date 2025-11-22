@@ -13,9 +13,9 @@ export type RootTabParamList = {
 };
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
-const { token } = useContext(AuthContext);
 
 export default function AppRouter() {
+  const { token } = useContext(AuthContext);
   return (
     <Tab.Navigator>
       {!token ? (    //se não tem o token
